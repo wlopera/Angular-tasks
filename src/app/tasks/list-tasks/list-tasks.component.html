@@ -9,10 +9,10 @@
     <tbody>
         <tr *ngFor="let task of tasks; index as i">
             <th>{{i+1}}</th>
-            <th><b>{{task}}</b></th>
+            <th><b>{{task.name}}</b></th>
             <th>
                 <button class="button is-link">Completar</button>
             </th>
-            <th><button class="button is-danger">Eliminar</button></th>
+            <th><button class="button is-danger" (click)="delete(task)">Eliminar</button></th>
     </tbody>
 </table>

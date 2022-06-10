@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from '../interfaces/task';
 import { TasksService } from '../services/tasks.service';
 
 @Component({
@@ -10,7 +11,11 @@ export class ListTasksComponent {
     console.log(tasksService);
   }
 
-  get tasks(){
-    return this.tasksService.tasks
+  get tasks() {
+    return this.tasksService.tasks;
   }
+
+  delete = (task: Task) => {
+    this.tasksService.deleteTask(task.name);
+  };
 }
