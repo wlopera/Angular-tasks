@@ -1,6 +1,6 @@
 # Tasks
 
-Proyceto Tareas - generado con [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+Proyecto Tareas - generado con [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
 ## Development server
 Levantar servidor: `ng serve`. Ruta `http://localhost:4200/`.
