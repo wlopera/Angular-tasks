@@ -9,9 +9,9 @@
     <tbody>
         <tr *ngFor="let task of tasks; index as i">
             <th>{{i+1}}</th>
-            <th><b>{{task.name}}</b></th>
+            <th><b [ngClass]="task.complete? 'is-underlined' : '' ">{{task.name}}</b></th>
             <th>
-                <button class="button is-link">Completar</button>
+                <button [disabled]="task.complete" class="button is-link" (click)="complete(task)">Completar</button>
             </th>
             <th><button class="button is-danger" (click)="delete(task)">Eliminar</button></th>
     </tbody>

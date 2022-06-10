@@ -26,4 +26,9 @@ export class TasksService {
   deleteTask = (taskName: string) => {
     this.tasks = this.tasks.filter((task) => task.name !== taskName);
   };
+
+  completeTask = (taskName: string) => {
+    const task: Task = this.tasks.find((task) => task.name === taskName)!;
+    task.complete = !task.complete;
+  };
 }

@@ -18,4 +18,8 @@ export class ListTasksComponent {
   delete = (task: Task) => {
     this.tasksService.deleteTask(task.name);
   };
+
+  complete = (task: Task) => {
+    this.tasksService.completeTask(task.name);
+  };
 }
