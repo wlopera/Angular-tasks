@@ -6,7 +6,11 @@ import { TasksService } from '../services/tasks.service';
   templateUrl: './list-tasks.component.html',
 })
 export class ListTasksComponent {
-  constructor(tasksService: TasksService) {
+  constructor(private tasksService: TasksService) {
     console.log(tasksService);
+  }
+
+  get tasks(){
+    return this.tasksService.tasks
   }
 }
