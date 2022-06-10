@@ -1,10 +1,25 @@
 import { Component } from '@angular/core';
+import { Task } from '../interfaces/task';
+import { TasksService } from '../services/tasks.service';
 
 @Component({
   selector: 'app-list-tasks',
   templateUrl: './list-tasks.component.html',
 })
 export class ListTasksComponent {
-  // ===> tasks: string[] = [];
-  tasks: Array<string> = ['Barrer', 'Trapear', 'Cocinar', 'leer'];
+  constructor(private tasksService: TasksService) {
+    console.log(tasksService);
+  }
+
+  get tasks() {
+    return this.tasksService.tasks;
+  }
+
+  delete = (task: Task) => {
+    this.tasksService.deleteTask(task.name);
+  };
+
+  complete = (task: Task) => {
+    this.tasksService.completeTask(task.name);
+  };
 }
